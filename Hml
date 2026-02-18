@@ -1,0 +1,67 @@
+
+ Cognitive Core v2.0 – Hallucination Management Layer
+
+Extension Module for FWS (Flexible Workflow System)
+
+This repository provides an advanced three‑layer hallucination‑management and cognitive‑safety module designed to integrate seamlessly with the existing FWS architecture.
+
+It introduces a structured pipeline for analyzing model outputs, detecting gray‑zone risks, and producing actionable decisions (allow, rewrite, human_review) that can be consumed by FWS workflows.
+
+---
+
+ Purpose
+
+FWS focuses on flexible workflow orchestration.  
+This module extends it by adding:
+
+- Context‑aware input analysis  
+- Gray‑zone detection for ambiguous or risky outputs  
+- A decision engine that quantifies hallucination and safety risk  
+- A Streamlit UI for debugging and visualization  
+
+This makes it ideal for:
+- LLM safety research  
+- Model evaluation  
+- Workflow gating  
+- Human‑in‑the‑loop moderation  
+
+---
+
+ Architecture
+
+Layer 1 – Context Detection
+Extracts:
+- Mood  
+- Cultural pattern  
+- Tone  
+- Emotional intensity  
+- Sensitivity level  
+
+Uses lightweight regex heuristics for fast evaluation.
+
+---
+
+Layer 2 – Gray‑Zone Detection
+Analyzes the model output for:
+- Ambiguity  
+- Insult probability  
+- Humor vs. insult  
+- Critique vs. attack  
+
+Produces a grayzone_score.
+
+---
+
+Layer 3 – Decision Engine
+Combines:
+- Hallucination score  
+- Risk score  
+- Context mismatch  
+- Reality alignment  
+
+Outputs:
+- allow
+- rewrite
+- human_review
+
+This output can be consumed directly by FWS as a gating node.
