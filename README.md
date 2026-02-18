@@ -88,3 +88,4 @@ If you work in platforms, content systems, AI governance, or safety, integrating
 Contact
 linkedin.com/in/roya-fouladvand
 rebookrabt@gmail.com
++989212127594
